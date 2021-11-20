@@ -31,7 +31,7 @@
     outline-color: #14635C;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 420px) {
     .textFieldInput {
         width: 300px;
     }
