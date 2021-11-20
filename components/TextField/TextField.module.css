@@ -30,3 +30,9 @@
 .textFieldInput:focus {
     outline-color: #14635C;
 }
+
+@media screen and (max-width: 768px) {
+    .textFieldInput {
+        width: 300px;
+    }
+}

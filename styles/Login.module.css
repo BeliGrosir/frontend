@@ -76,3 +76,9 @@
 
     color: #EC6D27;
 }
+
+@media screen and (max-width: 768px) {
+    .formField {
+        width: 300px;
+    }
+}
