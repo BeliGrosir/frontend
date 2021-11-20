@@ -1,4 +1,3 @@
-import { style } from 'dom-helpers'
 import Head from 'next/head'
 import Link from 'next/link'
 import TextField from '../../components/TextField'
