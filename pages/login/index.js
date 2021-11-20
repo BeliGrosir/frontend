@@ -11,7 +11,7 @@ export default function Home() {
             <Head>
                 <title>Log In</title>
             </Head>
-            <h1 className={styles.title}>Login</h1>
+            <h1 className={styles.title}>Log In</h1>
             <div className={styles.formField}>
                 <TextField
                     label={"Username"}
