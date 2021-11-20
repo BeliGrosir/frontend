@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 export default function NavigationBar() {
     return (
-        <Navbar collapseOnSelect expand="md" fixed="top" className={styles.navbar}>
+        <Navbar collapseOnSelect expand="md" className={styles.navbar}>
             <Container>
                 <Navbar.Brand href="#home">
                     <Image

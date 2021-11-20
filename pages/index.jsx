@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Hero from "../public/landing/hero.png";
+import Navbar from "../components/NavigationBar";
 import Category from "../components/category";
 import HowItWorks from "../components/howItWorksCard";
 import styles from "../styles/pages/Home.module.css";
@@ -67,6 +68,7 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Navbar />
       <main className={styles.main}>
         <div className={styles.landing}>
           <Row>
