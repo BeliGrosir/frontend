@@ -1,6 +1,7 @@
 .container {
     display: flex;
     flex-direction: column;
+    margin-bottom: 25px;
 }
 
 .textFieldLabel {
@@ -12,7 +13,7 @@
 .textFieldInput {
     margin-top: 10px;
     
-    width: 382px;
+    width: 375px;
     height: 40px;
 
     background-color: #F4F4F4;
@@ -22,6 +23,8 @@
     border-right-style: hidden;
     border-left-style: hidden;
     border-bottom-style: hidden;
+
+    padding-left: 10px;
 }
 
 .textFieldInput:focus {
