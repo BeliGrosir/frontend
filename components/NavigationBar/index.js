@@ -19,7 +19,7 @@ export default function NavigationBar() {
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="ms-auto">
+                    <Nav className="ms-auto text-center">
                         <Link href="/">
                             <a className={`${styles.button} ${styles.signUpButton}`}>
                                 Sign Up

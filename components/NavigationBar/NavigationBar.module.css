@@ -38,3 +38,15 @@
 .cart {
     margin: 0 20px;
 }
+
+@media screen and (max-width: 768px) {
+    .button {
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    .cart {
+        margin: 10px 0 0 0;
+        text-align: center;
+    }
+}
