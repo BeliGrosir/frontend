@@ -1,3 +1,8 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
 .textFieldLabel {
     font-family: Roboto;
     font-size: 16px;
@@ -5,9 +10,20 @@
 }
 
 .textFieldInput {
+    margin-top: 10px;
+    
     width: 382px;
     height: 40px;
 
-    background: #F4F4F4;
+    background-color: #F4F4F4;
     border-radius: 5px;
+
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+}
+
+.textFieldInput:focus {
+    outline-color: #14635C;
 }

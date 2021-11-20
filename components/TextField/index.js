@@ -17,7 +17,7 @@ export default function TextField({
     }
 
     return (
-        <div>
+        <div className={styles.container}>
             <label className={styles.textFieldLabel}> {label} </label>
             <input
                 className={styles.textFieldInput}
