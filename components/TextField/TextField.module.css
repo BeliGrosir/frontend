@@ -1,0 +1,13 @@
+.textFieldLabel {
+    font-family: Roboto;
+    font-size: 16px;
+    color: #000000
+}
+
+.textFieldInput {
+    width: 382px;
+    height: 40px;
+
+    background: #F4F4F4;
+    border-radius: 5px;
+}
