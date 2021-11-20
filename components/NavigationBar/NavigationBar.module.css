@@ -1,0 +1,39 @@
+.navbar {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.button {
+    width: 100px;
+    height: 36px;
+    border-radius: 4px;
+    font-family: 'Roboto';
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    margin: 0 10px;
+}
+
+.signUpButton {
+    background-color: #14635C;
+    color: #FFFFFF;
+}
+
+.signUpButton:hover {
+    color: #FFFFFF;
+}
+
+.loginButton {
+    background-color: #FFFFFF;
+    color: #14635C;
+    border: 2px solid #14635C;
+}
+
+.loginButton:hover {
+    color: #14635C;
+}
+
+.cart {
+    margin: 0 20px;
+}
