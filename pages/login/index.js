@@ -1,11 +1,10 @@
-import { style } from 'dom-helpers'
 import Head from 'next/head'
 import Link from 'next/link'
 import TextField from '../../components/TextField'
 
 import styles from '../../styles/Login.module.css'
 
-export default function Home() {
+export default function Login() {
     return (
         <div className={styles.container}>
             <Head>
