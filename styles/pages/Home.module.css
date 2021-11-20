@@ -16,6 +16,7 @@
 
 .landingText h1 {
   color: #ec6d27;
+  font-weight: bold;
   font-size: 48px;
   line-height: 56px;
 }
@@ -28,6 +29,7 @@
 }
 
 .landingText input {
+  background: #F4F4F4;
   margin-top: 52px;
   padding-left: 43px;
   border: none;
