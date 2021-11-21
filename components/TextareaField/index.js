@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import styles from './TextField.module.css';
+import { Container } from 'react-bootstrap'
+import styles from './TextareaField.module.css';
 
 export default function TextField({
     label,
@@ -17,11 +18,10 @@ export default function TextField({
     }
 
     return (
-        <div className={styles.container}>
-            <label className={styles.textFieldLabel}> {label} </label>
-            <input
-                className={styles.textFieldInput}
-                type="text"
+        <div>
+            <textarea
+                rows={4}
+                className={styles.textareaFieldInput}
                 name={label}
                 value={value}
                 placeholder={placeholder}
@@ -31,6 +31,6 @@ export default function TextField({
                 defaultValue={defaultValue}
             />
             {error && <span className="error">{error}</span>}
-        </div >
+        </div>
     )
 }

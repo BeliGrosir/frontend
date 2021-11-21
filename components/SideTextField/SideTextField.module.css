@@ -1,0 +1,34 @@
+.container {
+    margin-bottom: 30px;
+}
+
+.textFieldLabel {
+    font-family: Roboto;
+    font-size: 16px;
+    color: #000000;
+}
+
+.textFieldInput { 
+    width: 100%;
+    height: 40px;
+
+    background-color: #F4F4F4;
+    border-radius: 5px;
+
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+
+    padding-left: 10px;
+}
+
+.textFieldInput:focus {
+    outline-color: #14635C;
+}
+
+@media screen and (max-width: 420px) {
+    .textFieldInput {
+        width: 300px;
+    }
+}
