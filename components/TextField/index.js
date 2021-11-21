@@ -8,7 +8,7 @@ export default function TextField({
     error,
     onChange,
     disabled,
-    defaultValue
+    defaultValue,
 }) {
     const [value, setValue] = useState(null);
     const onInputChange = (e) => {
@@ -31,6 +31,6 @@ export default function TextField({
                 defaultValue={defaultValue}
             />
             {error && <span className="error">{error}</span>}
-        </div>
+        </div >
     )
 }
