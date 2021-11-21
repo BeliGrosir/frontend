@@ -77,3 +77,32 @@
 
     color: #000000;
 }
+
+.subtotal {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: right;
+
+    color: #000000;
+}
+
+.button {
+    width: 100px;
+    height: 40px;
+    background: #14635C;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #FFFFFF;
+
+    border: none;
+    outline: none;
+    border-radius: 4px;
+}

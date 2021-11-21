@@ -54,8 +54,8 @@ export default function Cart() {
                     </Row>
                     <hr className={styles.divider} />
                     <Row>
-                        <Col>
-                            <div>
+                        <Col className="text-end">
+                            <div className={styles.subtotal}>
                                 <p>Subtotal</p>
                                 <p>Rp89.000</p>
                             </div>
@@ -71,10 +71,10 @@ export default function Cart() {
                             </div>
                             <div>
                                 <Link href="/">
-                                    <button>Continue to shopping</button>
+                                    <button className={styles.button}>Continue to shopping</button>
                                 </Link>
                                 <Link href="/checkout">
-                                    <button>Checkout</button>
+                                    <button className={styles.button}>Checkout</button>
                                 </Link>
                             </div>
                         </Col>
