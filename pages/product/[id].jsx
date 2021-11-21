@@ -6,9 +6,46 @@ import { Row, Col, Container } from "react-bootstrap";
 import categoryMap from "../../utils/categoryMap.json";
 import ProductCard from "../../components/productCard";
 import styles from "../../styles/pages/Product.module.css";
+import useUser from "../../hooks/useUser";
+import { useRouter } from "next/dist/client/router";
 
 export default function ProductDetail({ product, simProduct }) {
   simProduct = simProduct.filter( p => p.product_id !== product.product_id)
+  const user = useUser();
+  const router = useRouter()
+
+  const handleAddToCart = async (e) => {
+    e.preventDefault();
+    const data = {
+      product_id: product.product_id,
+      quantity: 1
+    };
+    var token = JSON.parse(user).token
+    const error = false;
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_LINK}cart`, {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`
+      },
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res;
+        } else {
+          throw new Error("Error");
+        }
+      })
+      .catch((e) => {
+        error = true;
+        console.log(e);
+      });
+      if (!error) {
+        router.reload(window.location.pathname)
+      }
+  };
+
   const productReccomendations = simProduct.map((p, i) => (
     <ProductCard
       key={i}
@@ -20,9 +57,7 @@ export default function ProductDetail({ product, simProduct }) {
       location={"Jakarta Selatan"}
     />
   ));
-  const handleAddToCart = () => {
-    fetch()
-  }
+
   return (
     <div>
       <Head>
@@ -56,7 +91,7 @@ export default function ProductDetail({ product, simProduct }) {
                 </p>
                 <h3>Rp.{product.product_price}/kg</h3>
               </div>
-              <button className={styles.addToCart}>Add to Cart</button>
+              <button className={styles.addToCart} onClick={handleAddToCart}>Add to Cart</button>
               <div className={styles.brand}>
                 <Image
                   src={`${process.env.NEXT_PUBLIC_API_LINK}static/${product.store.store_image}`}
