@@ -5,7 +5,10 @@ import Navbar from "../components/NavigationBar";
 import Category from "../components/category";
 import HowItWorks from "../components/howItWorksCard";
 import styles from "../styles/pages/Home.module.css";
+import useForm from "../hooks/useForm";
+import { useRouter } from "next/dist/client/router";
 import { Row, Col } from "react-bootstrap";
+import Link from "next/link";
 import {
   BodyCare,
   Drinks,
@@ -17,17 +20,26 @@ import {
 import { Containers, Delivery, Order, Package } from "../utils/howItWorks";
 
 export default function Home() {
+  const [search, handleSearch] = useForm("");
+  const router = useRouter();
+
   const categories = [
-    <Category image={BodyCare} title={"Body Care"} />,
-    <Category image={Drinks} title={"Drinks"} />,
-    <Category image={EcoContainer} title={"Eco-Containers"} />,
-    <Category image={FoodIngredients} title={"Food Ingredients"} />,
-    <Category image={FreshFood} title={"Fresh Food"} />,
-    <Category image={Household} title={"Household"} />,
+    <Category key={1} id={"1"} image={BodyCare} title={"Body Care"} />,
+    <Category key={2} id={"2"} image={Drinks} title={"Drinks"} />,
+    <Category key={3} id={"3"} image={EcoContainer} title={"Eco-Containers"} />,
+    <Category
+      key={4}
+      id={"4"}
+      image={FoodIngredients}
+      title={"Food Ingredients"}
+    />,
+    <Category key={5} id={"5"} image={FreshFood} title={"Fresh Food"} />,
+    <Category key={6} id={"6"} image={Household} title={"Household"} />,
   ];
 
   const howItWorks = [
     <HowItWorks
+      key={1}
       index={1}
       image={Order}
       title={"Make an order"}
@@ -36,6 +48,7 @@ export default function Home() {
       }
     />,
     <HowItWorks
+      key={2}
       index={2}
       image={Containers}
       title={"Prepare empty containers"}
@@ -44,6 +57,7 @@ export default function Home() {
       }
     />,
     <HowItWorks
+      key={3}
       index={3}
       image={Delivery}
       title={"Wait for delivery"}
@@ -52,12 +66,17 @@ export default function Home() {
       }
     />,
     <HowItWorks
+      key={4}
       index={4}
       image={Package}
       title={"Receive package-free order"}
       text={"Fill containers with received products, and you’re done."}
     />,
   ];
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    router.push(`/products/search/${search}`);
+  };
   return (
     <div className={styles.container}>
       <Head>
@@ -77,12 +96,19 @@ export default function Home() {
               <p className={styles.landingPromo}>
                 Lower prices, free of single use packaging, and zero-waste!
               </p>
-              <form>
-                <input placeholder="Find bulk needs here..."></input>
+              <form onSubmit={handleSubmit}>
+                <input
+                  placeholder="Find bulk needs here..."
+                  value={search}
+                  onChange={handleSearch}
+                />
               </form>
               <p className={styles.landingInfo}>
-                Make sure you have an empty container available. Don't have a
-                container yet? <a>Find here</a>
+                Make sure you have an empty container available. Don&apos;t have
+                a container yet?
+                <Link href="/products/category/3">
+                  <a>Find here</a>
+                </Link>
               </p>
             </Col>
             <Col>

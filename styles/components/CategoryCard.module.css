@@ -1,0 +1,17 @@
+.main {
+    margin: 0 6px;
+    border: 2px solid #EC6D27;
+    border-radius: 4px;
+    color: #EC6D27;
+    font-family: Roboto;
+    width: 130px;
+    font-size: 12px;
+    padding: 4px 0;
+    text-align: center;
+    height: fit-content;
+    cursor: pointer;
+}
+
+.main p{
+    margin-bottom: 0;
+}
