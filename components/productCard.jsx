@@ -1,7 +1,14 @@
 import { Col } from "react-bootstrap";
 import Image from "next/image";
 import styles from "../styles/components/ProductCard.module.css";
-export default function ProductCard({ image, title, retail, price, location }) {
+export default function ProductCard({
+  id,
+  image,
+  title,
+  retail,
+  price,
+  location,
+}) {
   return (
     <Col className={styles.main} xs={3}>
       <div className={styles.image}>
