@@ -28,12 +28,14 @@
 
 .shippingAddress,
 .paymentMethod,
+.paymentConfirmation,
 .note {
     margin-bottom: 60px;
 }
 
 .shippingAddress h3,
 .paymentMethod h3,
+.paymentConfirmation h3,
 .note h3 {
     font-family: Roboto;
     font-style: normal;
@@ -46,7 +48,8 @@
     margin-bottom: 30px;
 }
 
-.paymentMethod p {
+.paymentMethod p,
+.paymentConfirmation p {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;

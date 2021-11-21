@@ -44,6 +44,10 @@ export default function Checkout() {
                             <h3>Payment Method</h3>
                             <p>Transfer to <b>BNI - Intan Berlian</b> (Account Number: 1782835672)</p>
                         </div>
+                        <div className={styles.paymentConfirmation}>
+                            <h3>Payment Confirmation</h3>
+                            <p>Please upload your payment evidence before placing order</p>
+                        </div>
                         <div className={styles.note}>
                             <h3>Note</h3>
                             <TextareaField
