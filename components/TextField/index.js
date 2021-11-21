@@ -9,24 +9,20 @@ export default function TextField({
     onChange,
     disabled,
     defaultValue,
+    type
 }) {
-    const [value, setValue] = useState(null);
-    const onInputChange = (e) => {
-        setValue(e.target.value);
-        onChange(e.target.value);
-    }
 
     return (
         <div className={styles.container}>
             <label className={styles.textFieldLabel}> {label} </label>
             <input
                 className={styles.textFieldInput}
-                type="text"
+                type={type === "password" ? "password" : "text"}
                 name={label}
-                value={value}
+                value={defaultValue}
                 placeholder={placeholder}
                 required={required}
-                onChange={onInputChange}
+                onChange={onChange}
                 disabled={disabled}
                 defaultValue={defaultValue}
             />
