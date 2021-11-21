@@ -1,0 +1,15 @@
+.category {
+  cursor: pointer;
+  margin-top: 36px;
+  width: fit-content;
+}
+
+.category p {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.categoryImage {
+  display: flex;
+  justify-content: center;
+}
