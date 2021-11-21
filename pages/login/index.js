@@ -24,7 +24,7 @@ export default function Login() {
                 />
                 <button className={styles.button}>Log in</button>
                 <div className={styles.signup}>
-                    <p className={styles.instruction}>Don't have an account yet?</p>
+                    <p className={styles.instruction}>Don&apos;t have an account yet?</p>
                     <Link href="/signup">
                         <a className={styles.signupButton}>Sign Up</a>
                     </Link>
