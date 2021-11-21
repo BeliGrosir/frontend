@@ -1,8 +1,6 @@
 import Head from "next/head";
 import Navbar from "../../components/NavigationBar";
-import Almond from "../../public/deleteLater/almond.png";
-import { useEffect } from "react";
-import Brand from "../../public/deleteLater/brand.png";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Row, Col, Container } from "react-bootstrap";
 import categoryMap from "../../utils/categoryMap.json";
@@ -10,66 +8,31 @@ import ProductCard from "../../components/productCard";
 import styles from "../../styles/pages/Product.module.css";
 
 export default function ProductDetail({ product }) {
+  const [simProducts, setSimProducts] = useState([]);
   useEffect(() => {
     fetch(
-      `${process.env.NEXT_PUBLIC_API_LINK}product?category_id=${product.category_id}`
+      `${process.env.NEXT_PUBLIC_API_LINK}products?category_id=${product.category_id}`
     )
       .then((response) => response.json())
       .then((data) =>
-        setCart(data.data.map((d) => ({ ...d, checked: false })))
-      );
+        data.data.filter((p) => p.product_id !== product.product_id)
+      )
+      .then((data) => setSimProducts(data))
+      .catch((e) => {
+        console.log(e);
+      });
   }, []);
-  const productReccomendations = [
+  const productReccomendations = simProducts.map((p, i) => (
     <ProductCard
-      image={Almond}
-      title={"Almonds"}
-      retail={"75.000"}
-      price={"65.000"}
+      key={i}
+      id={p.product_id}
+      image={`${process.env.NEXT_PUBLIC_API_LINK}static/${p.product_image}`}
+      title={p.product_name}
+      retail={p.retail_price}
+      price={p.product_price}
       location={"Jakarta Selatan"}
-    />,
-    <ProductCard
-      image={Almond}
-      title={"Almonds"}
-      retail={"75.000"}
-      price={"65.000"}
-      location={"Jakarta Selatan"}
-    />,
-    <ProductCard
-      image={Almond}
-      title={"Almonds"}
-      retail={"75.000"}
-      price={"65.000"}
-      location={"Jakarta Selatan"}
-    />,
-    <ProductCard
-      image={Almond}
-      title={"Almonds"}
-      retail={"75.000"}
-      price={"65.000"}
-      location={"Jakarta Selatan"}
-    />,
-    <ProductCard
-      image={Almond}
-      title={"Almonds"}
-      retail={"75.000"}
-      price={"65.000"}
-      location={"Jakarta Selatan"}
-    />,
-    <ProductCard
-      image={Almond}
-      title={"Almonds"}
-      retail={"75.000"}
-      price={"65.000"}
-      location={"Jakarta Selatan"}
-    />,
-    <ProductCard
-      image={Almond}
-      title={"Almonds"}
-      retail={"75.000"}
-      price={"65.000"}
-      location={"Jakarta Selatan"}
-    />,
-  ];
+    />
+  ));
   return (
     <div>
       <Head>

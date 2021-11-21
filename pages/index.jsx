@@ -5,6 +5,8 @@ import Navbar from "../components/NavigationBar";
 import Category from "../components/category";
 import HowItWorks from "../components/howItWorksCard";
 import styles from "../styles/pages/Home.module.css";
+import useForm from "../hooks/useForm";
+import { useRouter } from "next/dist/client/router";
 import { Row, Col } from "react-bootstrap";
 import {
   BodyCare,
@@ -17,6 +19,9 @@ import {
 import { Containers, Delivery, Order, Package } from "../utils/howItWorks";
 
 export default function Home() {
+  const [search, handleSearch] = useForm("");
+  const router = useRouter();
+
   const categories = [
     <Category image={BodyCare} title={"Body Care"} />,
     <Category image={Drinks} title={"Drinks"} />,
@@ -58,6 +63,10 @@ export default function Home() {
       text={"Fill containers with received products, and you’re done."}
     />,
   ];
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    router.push(`/products/search/${search}`);
+  };
   return (
     <div className={styles.container}>
       <Head>
@@ -77,8 +86,12 @@ export default function Home() {
               <p className={styles.landingPromo}>
                 Lower prices, free of single use packaging, and zero-waste!
               </p>
-              <form>
-                <input placeholder="Find bulk needs here..."></input>
+              <form onSubmit={handleSubmit}>
+                <input
+                  placeholder="Find bulk needs here..."
+                  value={search}
+                  onChange={handleSearch}
+                />
               </form>
               <p className={styles.landingInfo}>
                 Make sure you have an empty container available. Don't have a
