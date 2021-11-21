@@ -7,22 +7,9 @@ import categoryMap from "../../utils/categoryMap.json";
 import ProductCard from "../../components/productCard";
 import styles from "../../styles/pages/Product.module.css";
 
-export default function ProductDetail({ product }) {
-  const [simProducts, setSimProducts] = useState([]);
-  useEffect(() => {
-    fetch(
-      `${process.env.NEXT_PUBLIC_API_LINK}products?category_id=${product.category_id}`
-    )
-      .then((response) => response.json())
-      .then((data) =>
-        data.data.filter((p) => p.product_id !== product.product_id)
-      )
-      .then((data) => setSimProducts(data))
-      .catch((e) => {
-        console.log(e);
-      });
-  }, []);
-  const productReccomendations = simProducts.map((p, i) => (
+export default function ProductDetail({ product, simProduct }) {
+  simProduct = simProduct.filter( p => p.product_id !== product.product_id)
+  const productReccomendations = simProduct.map((p, i) => (
     <ProductCard
       key={i}
       id={p.product_id}
@@ -92,15 +79,23 @@ export default function ProductDetail({ product }) {
 
 export async function getServerSideProps({ params }) {
   const id = params.id;
-  const res = await fetch(
+  let res = await fetch(
     `${process.env.NEXT_PUBLIC_API_LINK}product?product_id=${id}`
   );
-  let data = "";
-  if (res) data = await res.json();
+  let product = "";
+  if (res) product = await res.json();
+  product = product.data || "";
+ 
+  res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_LINK}products?category_id=${product.category_id}`
+  )
+  let simProduct = ""
+  if (res) simProduct = await res.json();
 
   return {
     props: {
-      product: data.data || "",
+      product: product || "",
+      simProduct: simProduct.data
     },
   };
 }

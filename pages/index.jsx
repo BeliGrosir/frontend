@@ -23,12 +23,12 @@ export default function Home() {
   const router = useRouter();
 
   const categories = [
-    <Category key={1} image={BodyCare} title={"Body Care"} />,
-    <Category key={2} image={Drinks} title={"Drinks"} />,
-    <Category key={3} image={EcoContainer} title={"Eco-Containers"} />,
-    <Category key={4} image={FoodIngredients} title={"Food Ingredients"} />,
-    <Category key={5} image={FreshFood} title={"Fresh Food"} />,
-    <Category key={6} image={Household} title={"Household"} />,
+    <Category key={1} id={"1"} image={BodyCare} title={"Body Care"} />,
+    <Category key={2} id={"2"} image={Drinks} title={"Drinks"} />,
+    <Category key={3} id={"3"} image={EcoContainer} title={"Eco-Containers"} />,
+    <Category key={4} id={"4"} image={FoodIngredients} title={"Food Ingredients"} />,
+    <Category key={5} id={"5"} image={FreshFood} title={"Fresh Food"} />,
+    <Category key={6} id={"6"} image={Household} title={"Household"} />,
   ];
 
   const howItWorks = [
