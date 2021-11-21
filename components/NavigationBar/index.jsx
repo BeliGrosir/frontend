@@ -22,17 +22,17 @@ export default function NavigationBar() {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ms-auto text-center">
-                        <Link href="/">
+                        <Link href="/signup">
                             <a className={`${styles.button} ${styles.signUpButton}`}>
                                 Sign Up
                             </a>
                         </Link>
-                        <Link href="/">
+                        <Link href="/login">
                             <a className={`${styles.button} ${styles.loginButton}`}>
                                 Login
                             </a>
                         </Link>
-                        <Link href="/">
+                        <Link href="/cart">
                             <a className={styles.cart}>
                                 <Image
                                     src={Cart}
