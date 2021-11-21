@@ -18,7 +18,7 @@ export default function TextField({
     }
 
     return (
-        <Container>
+        <div>
             <textarea
                 rows={4}
                 className={styles.textareaFieldInput}
@@ -31,6 +31,6 @@ export default function TextField({
                 defaultValue={defaultValue}
             />
             {error && <span className="error">{error}</span>}
-        </Container>
+        </div>
     )
 }

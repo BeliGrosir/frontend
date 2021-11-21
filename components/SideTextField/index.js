@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styles from './SideTextField.module.css';
 
-import { Container, Row, Col } from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap'
 
 export default function SideTextField({
     label,
@@ -19,7 +19,7 @@ export default function SideTextField({
     }
 
     return (
-        <Container className={styles.container}>
+        <div className={styles.container}>
             <Row className="d-flex align-items-center justify-content-center">
                 <Col xs={12} sm={12} md={3} lg={3}>
                     <label className={styles.textFieldLabel}> {label} </label>
@@ -39,6 +39,6 @@ export default function SideTextField({
                 </Col>
                 {error && <span className="error">{error}</span>}
             </Row>
-        </Container>
+        </div>
     )
 }
