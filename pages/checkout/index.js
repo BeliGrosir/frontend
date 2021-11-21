@@ -1,5 +1,6 @@
 import Head from 'next/head'
 
+import FileField from '../../components/FileField'
 import SideTextField from '../../components/SideTextField'
 import TextareaField from '../../components/TextareaField'
 
@@ -46,7 +47,9 @@ export default function Checkout() {
                         </div>
                         <div className={styles.paymentConfirmation}>
                             <h3>Payment Confirmation</h3>
-                            <p>Please upload your payment evidence before placing order</p>
+                            <FileField
+                                description={'Please upload your payment evidence before placing order'}
+                            />
                         </div>
                         <div className={styles.note}>
                             <h3>Note</h3>
