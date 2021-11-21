@@ -8,6 +8,7 @@ import styles from "../styles/pages/Home.module.css";
 import useForm from "../hooks/useForm";
 import { useRouter } from "next/dist/client/router";
 import { Row, Col } from "react-bootstrap";
+import Link from "next/link";
 import {
   BodyCare,
   Drinks,
@@ -23,12 +24,17 @@ export default function Home() {
   const router = useRouter();
 
   const categories = [
-    <Category key={1} image={BodyCare} title={"Body Care"} />,
-    <Category key={2} image={Drinks} title={"Drinks"} />,
-    <Category key={3} image={EcoContainer} title={"Eco-Containers"} />,
-    <Category key={4} image={FoodIngredients} title={"Food Ingredients"} />,
-    <Category key={5} image={FreshFood} title={"Fresh Food"} />,
-    <Category key={6} image={Household} title={"Household"} />,
+    <Category key={1} id={"1"} image={BodyCare} title={"Body Care"} />,
+    <Category key={2} id={"2"} image={Drinks} title={"Drinks"} />,
+    <Category key={3} id={"3"} image={EcoContainer} title={"Eco-Containers"} />,
+    <Category
+      key={4}
+      id={"4"}
+      image={FoodIngredients}
+      title={"Food Ingredients"}
+    />,
+    <Category key={5} id={"5"} image={FreshFood} title={"Fresh Food"} />,
+    <Category key={6} id={"6"} image={Household} title={"Household"} />,
   ];
 
   const howItWorks = [
@@ -98,8 +104,11 @@ export default function Home() {
                 />
               </form>
               <p className={styles.landingInfo}>
-                Make sure you have an empty container available. Don&apos;t have a
-                container yet? <a>Find here</a>
+                Make sure you have an empty container available. Don&apos;t have
+                a container yet?{" "}
+                <Link href="/products/category/3">
+                  <a>Find here</a>
+                </Link>
               </p>
             </Col>
             <Col>

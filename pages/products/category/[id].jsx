@@ -55,7 +55,10 @@ export default function ProductCatalog({ products, query }) {
               onChange={handleSearch}
             />
           </form>
-          <div className={styles.categories}><p>Categories:</p>{categories}</div>
+          <div className={styles.categories}>
+            <p>Categories:</p>
+            {categories}
+          </div>
 
           <Row className={styles.products}>{productReccomendations}</Row>
         </main>
