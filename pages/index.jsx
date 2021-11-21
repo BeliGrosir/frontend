@@ -105,7 +105,7 @@ export default function Home() {
               </form>
               <p className={styles.landingInfo}>
                 Make sure you have an empty container available. Don&apos;t have
-                a container yet?{" "}
+                a container yet?
                 <Link href="/products/category/3">
                   <a>Find here</a>
                 </Link>
