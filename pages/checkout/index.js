@@ -1,6 +1,7 @@
 import Head from 'next/head'
 
 import SideTextField from '../../components/SideTextField'
+import TextareaField from '../../components/TextareaField'
 
 import styles from '../../styles/Checkout.module.css'
 
@@ -45,6 +46,10 @@ export default function Checkout() {
                         </div>
                         <div className={styles.note}>
                             <h3>Note</h3>
+                            <TextareaField
+                                placeholder={"Type your note"}
+                                required={true}
+                            />
                         </div>
                     </Col>
                     <Col md={4} lg={4} xl={4}>Variable width content</Col>
