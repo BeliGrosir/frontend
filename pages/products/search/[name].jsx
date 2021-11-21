@@ -11,12 +11,12 @@ export default function ProductCatalog({ products, query }) {
   const router = useRouter();
   const [search, handleSearch] = useForm("");
   const categories = [
-    <CategoryCard name={"Body Care"} id={"1"} />,
-    <CategoryCard name={"Drinks"} id={"2"} />,
-    <CategoryCard name={"Eco-Containers"} id={"3"} />,
-    <CategoryCard name={"Food Ingredients"} id={"4"} />,
-    <CategoryCard name={"Fresh Food"} id={"5"} />,
-    <CategoryCard name={"Household"} id={"6"} />,
+    <CategoryCard key={1} name={"Body Care"} id={"1"} />,
+    <CategoryCard key={2} name={"Drinks"} id={"2"} />,
+    <CategoryCard key={3} name={"Eco-Containers"} id={"3"} />,
+    <CategoryCard key={4} name={"Food Ingredients"} id={"4"} />,
+    <CategoryCard key={5} name={"Fresh Food"} id={"5"} />,
+    <CategoryCard key={6} name={"Household"} id={"6"} />,
   ];
 
   const handleSubmit = (e) => {

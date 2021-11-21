@@ -33,6 +33,9 @@ export default function ProductDetail({ product }) {
       location={"Jakarta Selatan"}
     />
   ));
+  const handleAddToCart = () => {
+    fetch()
+  }
   return (
     <div>
       <Head>

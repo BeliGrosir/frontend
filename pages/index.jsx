@@ -23,16 +23,17 @@ export default function Home() {
   const router = useRouter();
 
   const categories = [
-    <Category image={BodyCare} title={"Body Care"} />,
-    <Category image={Drinks} title={"Drinks"} />,
-    <Category image={EcoContainer} title={"Eco-Containers"} />,
-    <Category image={FoodIngredients} title={"Food Ingredients"} />,
-    <Category image={FreshFood} title={"Fresh Food"} />,
-    <Category image={Household} title={"Household"} />,
+    <Category key={1} image={BodyCare} title={"Body Care"} />,
+    <Category key={2} image={Drinks} title={"Drinks"} />,
+    <Category key={3} image={EcoContainer} title={"Eco-Containers"} />,
+    <Category key={4} image={FoodIngredients} title={"Food Ingredients"} />,
+    <Category key={5} image={FreshFood} title={"Fresh Food"} />,
+    <Category key={6} image={Household} title={"Household"} />,
   ];
 
   const howItWorks = [
     <HowItWorks
+      key={1}
       index={1}
       image={Order}
       title={"Make an order"}
@@ -41,6 +42,7 @@ export default function Home() {
       }
     />,
     <HowItWorks
+      key={2}
       index={2}
       image={Containers}
       title={"Prepare empty containers"}
@@ -49,6 +51,7 @@ export default function Home() {
       }
     />,
     <HowItWorks
+      key={3}
       index={3}
       image={Delivery}
       title={"Wait for delivery"}
@@ -57,6 +60,7 @@ export default function Home() {
       }
     />,
     <HowItWorks
+      key={4}
       index={4}
       image={Package}
       title={"Receive package-free order"}
@@ -94,7 +98,7 @@ export default function Home() {
                 />
               </form>
               <p className={styles.landingInfo}>
-                Make sure you have an empty container available. Don't have a
+                Make sure you have an empty container available. Don&apos;t have a
                 container yet? <a>Find here</a>
               </p>
             </Col>
