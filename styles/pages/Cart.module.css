@@ -1,0 +1,79 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+
+    color: #000000;
+
+    margin-top: 75px;
+    margin-bottom: 50px;
+}
+
+.headerTable {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+
+    color: #000000;
+}
+
+.divider {
+    border: 1px solid #E5E5E5;
+}
+
+.product {
+    display: flex;
+    flex-direction: row;
+}
+
+.productImage {
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.productDetail {
+    margin-left: 30px;
+    text-align: left;
+}
+
+.productDetail h3 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+
+    color: #000000;
+}
+
+.productDetail p {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    
+    color: #666666;
+}
+
+.totalPriceProduct {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+
+    color: #000000;
+}
