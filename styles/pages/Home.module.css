@@ -54,6 +54,10 @@
   line-height: 14px;
 }
 
+.landingInfo a {
+  color: #E65925;
+}
+
 .landingImg {
   height: 100%;
   width: auto;
