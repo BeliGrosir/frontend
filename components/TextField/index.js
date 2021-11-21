@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styles from './TextField.module.css';
 
 export default function TextField({
@@ -11,7 +11,6 @@ export default function TextField({
     defaultValue,
     type
 }) {
-  
     return (
         <div className={styles.container}>
             <label className={styles.textFieldLabel}> {label} </label>

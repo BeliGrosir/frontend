@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import Info from '../../assets/images/Info.svg'
 import Navbar from "../../components/NavigationBar";
 
@@ -69,8 +70,12 @@ export default function Cart() {
                                 <p>Shipping cost will be calculated at checkout</p>
                             </div>
                             <div>
-                                <button>Continue to Shopping</button>
-                                <button>Checkout</button>
+                                <Link href="/">
+                                    <button>Continue to shopping</button>
+                                </Link>
+                                <Link href="/checkout">
+                                    <button>Checkout</button>
+                                </Link>
                             </div>
                         </Col>
                     </Row>
